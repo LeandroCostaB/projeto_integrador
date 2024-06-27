@@ -1,0 +1,285 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*NAV COMEÇA AQUI*/
+body {
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #243746;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header img {
+    max-width: 150px;
+    height: auto;
+    margin: 10px;
+}
+
+.teste:hover {
+    color: #EB0045;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 10px 20px;
+    font-size: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #243746;
+    font-weight: bold;
+}
+
+/*NAV TERMINA AQUI*/
+
+main {
+    padding-top: 1px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #fff;
+}
+
+.titulo {
+    width: 200px;
+    height: 20px;
+    background-color: #EB0045;
+    color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.principal {
+    background-color: #243746;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.caixa {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    display: auto;
+    font-size: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: -5px;
+    margin-top: -5px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.caixa a{
+    color: #fff;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    background-color: #EB0045; 
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    filter: brightness(0.6);
+}
+
+.caixa:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    transition-duration: 0.4s;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.caixa {
+    transition-duration: 0.4s;
+    transition-property: transform, filter;
+}
+
+span {
+    padding: 0 10px;
+}
+
+.areaIcon {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: #243746;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .container {
+    text-align: left;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+footer h2 {
+    color: #EB0045;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+footer i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer address {
+    font-style: normal;
+    margin-top: 10px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+@media (max-width: 442px) {
+    header img {
+        max-width: 120px;
+        
+    }
+
+    .titulo {
+        width: auto !important;
+        padding: 10px;
+    }
+
+    .principal {
+        margin: 2%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
+    }
+
+    .titulo h2 {
+        font-size: 20px; 
+        padding: 10px;   
+        margin: 10px;    
+    }
+    
+    .caixa {
+        flex-direction: column; 
+        align-items: flex-start;
+        margin: -10px;
+    }
+
+    button {
+        width: auto !important;
+        margin-right: 0; 
+        margin-bottom: 20px;
+        padding-right: 10px; 
+    }
+
+    .areaIcon {
+        width: auto !important;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1390px) {
+    .caixa {
+        width: auto !important;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 40px;
+    }
+
+    nav li {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px ;
+    }
+}

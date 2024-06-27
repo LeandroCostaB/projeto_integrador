@@ -1,0 +1,264 @@
+/* Estilos Gerais */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #243746;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header img {
+    max-width: 150px;
+    height: auto;
+    margin: 10px;
+}
+
+.teste:hover {
+    color: #EB0045;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 10px 20px;
+    font-size: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #243746;
+    font-weight: bold;
+}
+
+/* Principal */
+main {
+    padding: 20px;
+    background-color: #fff;
+}
+
+main h1 {
+    color: #EB0045;
+    font-size: 50px;
+}
+
+main h3 {
+    color: #243746;
+    font-size: 30px;
+}
+
+.principal {
+    background-color: #243746;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.titulo {
+    background-color: #EB0045;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+main .titulo h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* Caixas de Conteúdo */
+.boxa {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.boxa h3 {
+    color: #EB0045;
+    margin: 10px 0;
+}
+
+.boxa h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.prof::before,
+.empregab::before,
+.pred::before,
+.infra::before {
+    display: inline-block;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+
+.prof::before {
+    content: url('Prof.png');
+}
+
+.empregab::before {
+    content: url('empregab.png');
+}
+
+.pred::before {
+    content: url('pred.png');
+}
+
+.infra::before {
+    content: url('infra.png');
+}
+
+.boxa:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+    background-color: #243746;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .container {
+    text-align: left;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+footer h2 {
+    color: #EB0045;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+footer i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer address {
+    font-style: normal;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 1200px) {
+    .boxa {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 40px;
+    }
+
+    nav li {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .titulo {
+        width: auto;
+        padding: 10px 20px;
+    }
+
+    .boxa {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px ;
+    }
+
+    .titulo {
+        width: auto;
+        padding: 10px 20px;
+    }
+
+    .boxa {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header img {
+        max-width: 120px;
+        
+    }
+
+    .boxa h3, .boxa h4 {
+        font-size: 16px;
+    }
+
+    .boxa {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .boxa {
+        width: 100%;
+        padding: 10px;
+    }
+}
