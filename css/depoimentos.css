@@ -12,51 +12,34 @@ body {
 header {
     background-color: #fff;
     padding: 20px;
-    margin: auto;
     display: flex;
-    top: 0;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header img {
-    max-width:200px;
-    max-height: 200px;
-    padding: 0%;
-    padding-left: 100px;
-    padding-right: 100px;
-    width: auto;
+    max-width: 150px;
     height: auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
     margin: 10px;
-}
-
-.logo img {
-    width: 120px;
-    margin-right: 12px;
 }
 
 .teste:hover {
     color: #EB0045;
 }
+
+/* Navegação */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    position: absolute;
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav li {
-    margin-right: auto;
-    margin-left: 40px;
+    margin: 10px 20px;
     font-size: 20px;
 }
 
@@ -65,6 +48,35 @@ nav a {
     color: #243746;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 40px;
+    }
+
+    nav li {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px ;
+    }
+}
+
 /*NAV TERMINA AQUI*/
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -72,32 +84,34 @@ nav a {
 /*MAIN COMEÇA AQUI*/
 main {
     padding-top: 1px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
     background-color: #fff;
 }
+
 main h1 {
     color: #EB0045;
     font-size: 50px;
 }
 
 main h3 {
-    color:#243746;
+    color: #243746;
     font-size: 30px;
 }
 
 .principal {
     background-color: #243746;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     border-radius: 20px;
     text-align: center;
 }
 
 .titulo {
-    width: 600px;
     height: 45px;
-    background-color:#EB0045;
+    width: auto;
+    margin: auto;
+    background-color: #EB0045;
     color: #fff;
     padding: 20px;
     border-radius: 20px;
@@ -105,7 +119,6 @@ main h3 {
     text-align: center;
     align-items: center;
 }
-
 
 main .titulo img {
     height: 50px;
@@ -127,13 +140,13 @@ main h2 {
 
 .boxa {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 20px;
-    width: 1200px;
-    height: 200px;
+    width: auto;
+    height: auto;
     margin: auto;
     margin-top: -10px;
-    text-align:center;
+    text-align: center;
     position: relative;
     transition: transform 0.4s ease-in-out;
 }
@@ -141,31 +154,63 @@ main h2 {
 .boxa img {
     height: 50px;
     width: 200px;
-    position:absolute;
+    position: absolute;
     top: 15px;
     right: 15px;
 }
 
-.boxa h3{
-    color:#EB0045;
+.boxa h3 {
+    color: #EB0045;
     margin: 10px;
 }
 
-.boxa h4{
+.boxa h4 {
     font-size: 20px;
     margin: 10px;
 }
 
-.boxa:hover{
-    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
-    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+.boxa:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
 }
 
-.boxa:hover{
+.boxa:hover {
     transition-duration: 0.4s;
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
+
+/* Media query para tornar responsivo */
+@media screen and (max-width: 1000px) {
+    .boxa img {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .boxa h4 {
+        font-size: 15px;
+        text-align: justify;
+    }
+    .boxa h3 {
+        font-size: 20px;
+    }
+    main h2 {
+        font-size: 24px;
+    }
+    .principal {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .titulo {
+        padding: 15px;
+        margin: 0%;
+    }
+    
+}
+
 /*MAIN TERMINA AQUI*/
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////*/

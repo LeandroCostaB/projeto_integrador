@@ -12,52 +12,34 @@ body {
 header {
     background-color: #fff;
     padding: 20px;
-    margin: auto;
     display: flex;
-    top: 0;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header img {
-    max-width:200px;
-    max-height: 200px;
-    padding: 0%;
-    padding-left: 100px;
-    padding-right: 100px;
-    width: auto;
+    max-width: 150px;
     height: auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
     margin: 10px;
-}
-
-.logo img {
-    width: 120px;
-    margin-right: 12px;
 }
 
 .teste:hover {
     color: #EB0045;
 }
 
+/* Navegação */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    position: absolute;
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav li {
-    margin-right: auto;
-    margin-left: 40px;
+    margin: 10px 20px;
     font-size: 20px;
 }
 
@@ -66,7 +48,37 @@ nav a {
     color: #243746;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 40px;
+    }
+
+    nav li {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px ;
+    }
+}
+
 /*NAV TERMINA AQUI*/
+
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -77,29 +89,30 @@ main {
     padding-right: 50px;
     background-color: #fff;
 }
+
 main h1 {
     color: #EB0045;
     font-size: 50px;
 }
 
 main h3 {
-    color:#243746;
+    color: #243746;
     font-size: 30px;
 }
 
-main .principal {
+.principal {
     background-color: #243746;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     border-radius: 20px;
     text-align: center;
 }
 
-main .titulo {
+.titulo {
     width: 600px;
     height: 45px;
     text-align: center;
-    background-color:#EB0045;
+    background-color: #EB0045;
     color: #fff;
     margin: auto;
     padding: 20px;
@@ -113,60 +126,124 @@ main h2 {
     font-size: 40px;
 }
 
- .boxa {
+.boxa {
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
-    display: inline-flex;
-    width: 1200px;
-    height: 500px;
+    width: 90%;
     margin: auto;
+    text-align: center;
+    position: relative;
     transition: transform 0.4s ease-in-out;
+    display:inline-flex;
 }
 
-main .boxa div {
+.boxa div {
     background-color: #243746;
-    padding: 20px;
+    padding: 30px;
     border-radius: 20px;
-    width: 500px;
-    height: 400px;
-    margin: auto;
+    width: 100%;
+    margin: 20px;
     text-align: center;
 }
 
-main .boxa h2{
+.boxa h2 {
     color: #ffffff;
-    border: 5px solid #EB0045; /* Cor e espessura do contorno */
-    border-radius: 20px; /* Bordas arredondadas */
+    border: 5px solid #EB0045;
+    border-radius: 20px;
     padding: 5px;
+    margin-top: 0; /* Remover margem superior padrão */
 }
 
-main .boxa h4{
-    color:#ffffff;
+.boxa h4 {
+    color: #ffffff;
     font-size: 24px;
     text-align: justify;
     padding: 5px;
-    padding-top: 0%;
+    padding-top: 0;
+    margin-bottom: 0; /* Remover margem inferior padrão */
 }
 
-main .boxa img {
-    max-width:500px;
-    max-height: 500px;
-    padding: 20px;
-    padding-left: 120px;
-    padding-right: 120px;
+.boxa img {
+    max-width: 40%; /* Para que a imagem não ultrapasse o tamanho da div */
+    border-radius: 20px; /* Adicionando borda arredondada às imagens */
+    margin-bottom: 20px; /* Espaço entre a imagem e o texto */
+    padding-left: auto;
+    padding-right: auto;
     width: auto;
     height: auto;
+    text-align: center;
 }
 
-main .boxa:hover{
-    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
-    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
-}
-main .boxa:hover{
+.boxa:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
     transition-duration: 0.4s;
-    -webkit-transform: scale(1.05);
     transform: scale(1.05);
+}
+
+/* Media query para tornar responsivo */
+@media screen and (max-width: 1100px) {
+    .boxa {
+        flex-direction: column; /* Empilhar imagem acima do texto em telas menores */
+        display: flex;
+        justify-content: center;
+    }
+
+    .boxa div {
+        margin: 20px;
+        width: 85%;
+    }
+    
+    .boxa img {
+        margin-bottom: 10px; /* Reduzir o espaço entre a imagem e o texto */
+        max-width: 50%; /* Para que a imagem não ultrapasse o tamanho da div */
+        height: auto;
+        margin: auto;
+    }
+}
+
+/* Media query para tornar responsivo */
+@media screen and (max-width: 850px) {
+    main h2 {
+        font-size: 24px;
+    }
+    main h1 {
+        font-size: 30px;
+    }
+
+    main h3 {
+        font-size: 17px;
+        margin-bottom: 40px;
+    }
+    .principal {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: -30px;
+    }
+    .titulo {
+        padding: 15px;
+        height: 35px;
+        width: auto;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 20px;
+        display: inline-flex;
+        text-align: center;
+        align-items: center;
+    }
+    .boxa h4 {
+        font-size: 15px;
+    }
+    .boxa div {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .boxa div {
+        margin: -5px;
+    }
 }
 /*MAIN TERMINA AQUI*/
 

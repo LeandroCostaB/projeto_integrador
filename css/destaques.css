@@ -12,51 +12,34 @@ body {
 header {
     background-color: #fff;
     padding: 20px;
-    margin: auto;
     display: flex;
-    top: 0;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header img {
-    max-width:200px;
-    max-height: 200px;
-    padding: 0%;
-    padding-left: 100px;
-    padding-right: 100px;
-    width: auto;
+    max-width: 150px;
     height: auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
     margin: 10px;
-}
-
-.logo img {
-    width: 120px;
-    margin-right: 12px;
 }
 
 .teste:hover {
     color: #EB0045;
 }
+
+/* Navegação */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    position: absolute;
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav li {
-    margin-right: auto;
-    margin-left: 40px;
+    margin: 10px 20px;
     font-size: 20px;
 }
 
@@ -65,6 +48,35 @@ nav a {
     color: #243746;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 40px;
+    }
+
+    nav li {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px ;
+    }
+}
+
 /*NAV TERMINA AQUI*/
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -77,19 +89,19 @@ main {
     background-color: #fff;
 }
 
-main .principal {
+.principal {
     background-color: #243746;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     border-radius: 20px;
     text-align: center;
 }
 
-main .titulo {
+.titulo {
     width: 600px;
     height: 45px;
     text-align: center;
-    background-color:#EB0045;
+    background-color: #EB0045;
     color: #fff;
     margin: auto;
     padding: 20px;
@@ -103,23 +115,25 @@ main h2 {
     font-size: 40px;
 }
 
- .boxa {
+    .boxa {
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
     display: inline-flex;
-    width: 1200px;
-    height: 500px;
+    width: auto;
+    height: auto;
     margin: auto;
     transition: transform 0.4s ease-in-out;
+    text-align: center;
+    position: relative;
 }
 
-main .boxa div {
+.boxa div {
     padding: 20px;
     border-radius: 20px;
-    width: 500px;
-    height: 400px;
-    margin: auto;
+    max-height: 450px;
+    width: 100%;
+    margin: 20px;
     text-align: center;
 }
 
@@ -149,12 +163,16 @@ main .boxa h4{
 
 main .boxa img {
     max-width:500px;
-    max-height: 500px;
+    max-height: 550px;
     padding: 20px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: auto;
+    padding-right: auto;
+    padding-top: 5px;
     width: auto;
-    height: auto;
+    height: 550px; /* Define a altura fixa para todas as imagens */
+    object-fit: cover;
+    border-radius: 20px;
+    text-align: center;
 }
 
 main .boxa:hover{
@@ -178,43 +196,130 @@ main .boxa:hover{
     border: -5px solid #243746;
     border-radius: 20px;
     position: relative; /* Adicionado para navegação */
+    align-items: center;
 }
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.15 ease-in-out;
     width: 300%;
-    animation: slide 10s infinite;
+    animation: slide 20s infinite;
+    align-items: center;
 }
 
 .slide {
+    width: 100%;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.solo {
     width: 100%;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
 }
 
-.slide img {
-    max-width: 60%; /* Ajusta a largura máxima da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* Cobrir mantém a proporção e corta o excedente */
-    display: block;
-    justify-content: center;
-}
 
 @keyframes slide {
-    0% { transform: translateX(-7%); }
-    33% { transform: translateX(-7%); }
-    66% { transform: translateX(-107%); }
-    100% { transform: translateX(-207%); }
+    0% { transform: translateX(-13%); }
+    25% { transform: translateX(-13%); }
+    50% { transform: translateX(-115%); }
+    75% { transform: translateX(-220%); }
+    100% { transform: translateX(-322%); }
 }
 
 .slides:hover {
     animation-play-state: paused;
 }
-
 /*CAROSSEL TERMINA AQUI*/
+
+@media screen and (max-width: 1100px) {
+    .boxa {
+        flex-direction: column; /* Empilhar imagem acima do texto em telas menores */
+        display: flex;
+        justify-content: center;
+    }
+    .boxa div {
+        margin: 5%;
+        width: auto;
+    }
+    .boxa img {
+        margin-bottom: 10px; /* Reduzir o espaço entre a imagem e o texto */
+        max-width: 50%; /* Para que a imagem não ultrapasse o tamanho da div */
+        height: auto;
+        margin: auto;
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(-0%); }
+        25% { transform: translateX(-0%); }
+        50% { transform: translateX(-120%); }
+        75% { transform: translateX(-240%); }
+        100% { transform: translateX(-350%); }
+    }
+}
+
+@media screen and (max-width: 913px) {
+    
+    @keyframes slide {
+        0% { transform: translateX(-15%); }
+        25% { transform: translateX(-15%); }
+        50% { transform: translateX(-135%); }
+        75% { transform: translateX(-265%); }
+        100% { transform: translateX(-385%); }
+    }
+}
+
+@media screen and (max-width: 432px) {
+    main .boxa h2{
+        font-size: 25px;
+    }
+    main .boxa h4{
+        font-size: 15px;
+    }
+}
+/* Media query para tornar responsivo */
+@media screen and (max-width: 850px) {
+    main h2 {
+        font-size: 24px;
+    }
+    main h1 {
+        font-size: 30px;
+    }
+
+    main h3 {
+        font-size: 17px;
+        margin-bottom: 40px;
+    }
+    .principal {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: -30px;
+    }
+    .titulo {
+        padding: 15px;
+        height: 35px;
+        width: auto;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 20px;
+        display: inline-flex;
+        text-align: center;
+        align-items: center;
+    }
+    .boxa h4 {
+        font-size: 15px;
+    }
+    .boxa div {
+        margin: 5%;
+    }
+}
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
